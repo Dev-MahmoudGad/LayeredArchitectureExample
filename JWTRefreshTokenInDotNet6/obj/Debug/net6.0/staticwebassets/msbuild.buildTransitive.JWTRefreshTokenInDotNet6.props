@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\JWTRefreshTokenInDotNet6.props" />
-</Project>
