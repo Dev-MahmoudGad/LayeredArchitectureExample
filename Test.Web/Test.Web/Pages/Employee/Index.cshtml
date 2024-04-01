@@ -1,0 +1,57 @@
+﻿@page
+@using Microsoft.AspNetCore.Localization
+@model Test.Web.Pages.Employee.IndexModel
+
+<div>List Of Employee</div>
+<a href="/Employee/Create">Create New</a>
+<hr />
+
+<form asp-page-handler="SearchEmployee" method="post">
+    <div class="form-group">
+        <label for="name"><td>Name</td></label>
+        <input type="text" name="name" class="form-control" id="name">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<hr />
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Department Name</th>
+        <th>Download</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @if (Model.Employees != null)
+    {
+        foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Salary</td>
+                <td>@item.DepartmentName</td>
+                <td>
+                    <a class="btn btn-success" asp-page="/Employee/Index" asp-route-id="@item.Id" asp-page-handler="Download">
+                        Download
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-page="/Employee/Edit" asp-route-id="@item.Id" asp-page-handler="Edit">
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-page="/Employee/Delete" asp-route-id="@item.Id" asp-page-handler="Delete">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>

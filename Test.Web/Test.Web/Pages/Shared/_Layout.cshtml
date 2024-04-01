@@ -1,0 +1,25 @@
+﻿@using Test.Localization;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/CSS/site.css" />
+</head>
+
+    <div>
+        <partial name="_SelectLanguagePartial" />
+    </div>
+<body>
+
+    <h1>
+        <a href="/">@Resource.Home</a> &nbsp;&nbsp;
+        <a href="/AboutUs">@Resource.AboutUs</a>&nbsp;&nbsp;
+        <a href="/Contactus">@Resource.Contactus</a>&nbsp;&nbsp;
+        <a href="/Employee">@Resource.Employee</a>&nbsp;&nbsp;
+        <a href="/Department">@Resource.Department</a>
+    </h1>
+
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@page
+@model Test.Web.Pages.Employee.CreateModel
+@{
+}
+
+<div>Employee Create</div>
+
+<form asp-page-handler="Create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+
+        <label class="form-label">Name</label><span class="text-danger">*</span>
+        <input type="text" asp-for="@Model.EmployeeDTO.Name" class="form-control" maxlength="100">
+        <span asp-validation-for="@Model.EmployeeDTO.Name" class="text-danger"></span>
+        <hr />
+
+        <label class="form-label">Email</label><span class="text-danger">*</span>
+        <input type="text" asp-for="@Model.EmployeeDTO.Email" class="form-control" maxlength="100">
+        <span asp-validation-for="@Model.EmployeeDTO.Email" class="text-danger"></span>
+        <hr />
+
+        <label class="form-label">Salary</label><span class="text-danger">*</span>
+        <input type="text" asp-for="@Model.EmployeeDTO.Salary" class="form-control" maxlength="100">
+        <span asp-validation-for="@Model.EmployeeDTO.Salary" class="text-danger"></span>
+        <hr />
+
+        <label for="DepartmentId">Department:</label>
+        <select  asp-for="@Model.EmployeeDTO.DepartmentId" name="DepartmentId" asp-items="(IEnumerable<SelectListItem>)@ViewData["DepartmentId"]">
+            <option>Please select one</option>
+        </select>
+
+        <input  type="file" asp-for="@Model.EmployeeDTO.Filename" class="form-control"/>
+
+        <hr />
+
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>

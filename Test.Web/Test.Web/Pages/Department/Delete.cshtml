@@ -1,0 +1,17 @@
+﻿@page
+@model Test.Web.Pages.Department.DeleteModel
+@{
+}
+
+<form asp-page-handler="save" method="post">
+
+    <div class="form-group">
+
+        <input asp-for="@Model.Department.Id" value="@Model.Department.Id"  name="Id" type="hidden"/>
+        <label for="name">Department Name:</label>
+        <input asp-for="@Model.Department.DepartmentName" disabled name="DepartmentName" class="form-control">
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>

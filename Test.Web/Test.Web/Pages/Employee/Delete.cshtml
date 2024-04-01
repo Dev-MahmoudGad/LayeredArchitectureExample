@@ -1,0 +1,32 @@
+﻿@page
+@model Test.Web.Pages.Employee.DeleteModel
+@{
+}
+
+
+<form asp-page-handler="Delete" method="post">
+
+    <div class="form-group">
+
+        <input asp-for="@Model.Employee.Id" value="@Model.Employee.Id"  name="Id" type="hidden"/>
+      
+        <label for="name"> Name:</label>
+        <input  asp-for="@Model.Employee.Name" name="Name" class="form-control" disabled id="name">
+        <hr />
+        <label for="name">Email:</label>
+        <input  asp-for="@Model.Employee.Email" name="Email" class="form-control" disabled id="name">
+        <hr />
+
+        <label for="name">Salary:</label>
+        <input  asp-for="@Model.Employee.Salary" name="Salary" class="form-control" disabled id="name">
+        <hr />
+
+        <label for="DepartmentId">Department:</label>
+        <select  asp-for="@Model.Employee.DepartmentId" name="DepartmentId" asp-items="(IEnumerable<SelectListItem>)@ViewData["DepartmentId"]" disabled>
+            <option>Please select one</option>
+        </select>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
