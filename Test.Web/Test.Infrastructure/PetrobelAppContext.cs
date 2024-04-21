@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Test.Infrastructure
 {
-    public class PetrobelAppContext:DbContext
+    public class AppContext:DbContext
     {
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
